@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RSLasExportDialog</class>
+ <widget class="QDialog" name="RSLasExportDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>299</width>
+    <height>358</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Export Las Files</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>18</number>
+   </property>
+   <item>
+    <widget class="RSLasCombox" name="wRSWellCombox">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>23</height>
+      </size>
+     </property>
+     <property name="currentText">
+      <string>Select Well</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>Select Well</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="RSLasCombox" name="wRSLogTypeCombox">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>23</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Select Log Type</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="RSLasCombox" name="wRSLogNameComBox">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>23</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>Select Log Name</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Log Parameter</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>18</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Domain:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="wDepthRadio">
+          <property name="text">
+           <string>Depth</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="wTimeRadio">
+          <property name="text">
+           <string>Time</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="wStartLabel">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Start MD(m):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="wStartEdit">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="wEndLabel">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>End MD(m):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="wEndEdit">
+          <property name="text">
+           <string>10000</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="wIncLabel">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Inc(m):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="wIncEdit">
+          <property name="text">
+           <string>0.125</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <property name="spacing">
+      <number>9</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="wExportBtn">
+       <property name="text">
+        <string>Export</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="wExitBtn">
+       <property name="text">
+        <string>Exit</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>RSLasCombox</class>
+   <extends>QComboBox</extends>
+   <header>rslascombox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>wExportBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>RSLasExportDialog</receiver>
+   <slot>wExportClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>178</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>wDepthRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>RSLasExportDialog</receiver>
+   <slot>wDepthClicked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>162</x>
+     <y>164</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>178</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>wTimeRadio</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>RSLasExportDialog</receiver>
+   <slot>wTimeClicked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>242</x>
+     <y>164</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>178</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>wExitBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>RSLasExportDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>221</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>178</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>wExportClicked()</slot>
+  <slot>wDepthClicked(bool)</slot>
+  <slot>wTimeClicked(bool)</slot>
+ </slots>
+</ui>
