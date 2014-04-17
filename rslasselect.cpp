@@ -49,7 +49,6 @@ bool RSLasSelect::eventFilter(QObject *obj, QEvent *ev)
 
         QWidget::mousePressEvent(event);
         event->accept();
-
         return true;
     }
     return QWidget::eventFilter(obj, ev);
