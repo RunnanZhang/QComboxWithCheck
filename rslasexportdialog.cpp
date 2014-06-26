@@ -2,6 +2,7 @@
 #include "rslasselect.h"
 #include "ui_rslasexportdialog.h"
 #include <QPropertyAnimation>
+#include <QGraphicsOpacityEffect>
 
 RSLasExportDialog::RSLasExportDialog(QWidget *parent) :
     QDialog(parent), ui(new Ui::RSLasExportDialog)
@@ -44,6 +45,10 @@ void RSLasExportDialog::init()
     m_wellSelect->hide();
     m_logTypeSelect->hide();
     m_logNameSelect->hide();
+    QGraphicsOpacityEffect *effect = new QGraphicsOpacityEffect (this );
+    effect-> setOpacity(0.5);
+    ui->wStartEdit-> setGraphicsEffect(effect);
+
 }
 
 
@@ -97,6 +102,8 @@ void RSLasExportDialog::comboxClicked(RSLasSelectType::RSComBoxType type)
         m_logNameSelect->hide();
 
         QPropertyAnimation *animation = new QPropertyAnimation(m_wellSelect, "geometry");
+        //注：如下语句，假如多次快速点击触发，即第一次动画没完成，第二次就开始了，那么会造成内存泄露！
+        //因为finish()信号没有发出根本，就不会删除，可以考虑用成员变量的方式改善.
         connect(animation, SIGNAL(finished()), animation, SLOT(deleteLater()));
         animation->setDuration(500);
         animation->setStartValue(QRect(nX, nY, nW, 0));

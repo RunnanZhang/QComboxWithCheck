@@ -27,7 +27,7 @@ private slots:
 
 private:
     bool eventFilter(QObject *obj, QEvent *ev);
-    //void mousePressEvent(QMouseEvent * event);
+//    void mousePressEvent(QMouseEvent * event);
 
 private:
     Ui::RSLasSelect *ui;

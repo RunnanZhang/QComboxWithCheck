@@ -73,6 +73,9 @@
      <property name="title">
       <string>Log Parameter</string>
      </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="spacing">
        <number>18</number>
@@ -128,8 +131,14 @@
         </item>
         <item>
          <widget class="QLineEdit" name="wStartEdit">
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
           <property name="text">
            <string>0</string>
+          </property>
+          <property name="frame">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -154,6 +163,9 @@
          <widget class="QLineEdit" name="wEndEdit">
           <property name="text">
            <string>10000</string>
+          </property>
+          <property name="frame">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
